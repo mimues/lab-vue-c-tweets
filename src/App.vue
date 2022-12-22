@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="(tweet, index) in tweets" :tweet="tweet" :key="index"/>
   </div>
 </template>
 
@@ -94,6 +94,7 @@
 
   .tweet {
     margin: 0 auto;
+    margin-bottom: 10px;
     min-width: 480px;
     max-width: 640px;
     min-height: 80px;
@@ -102,6 +103,10 @@
     display: flex;
     font-size: 1.1rem;
     line-height: 18px;
+  }
+
+  .tweet:last-of-type {
+    margin-bottom: 0;
   }
 
   .body {
